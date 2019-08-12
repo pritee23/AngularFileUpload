@@ -1,0 +1,18 @@
+
+<div>
+    <form #myForm="ngForm" (ngSubmit)= "upload(myForm)">
+    <label> Username : </label>
+    <input type="text" name="username"style="margin-left:40px" [(ngModel)]="username">
+    <br><br>
+
+    <div>
+        <label class="btn btn-default">
+            <input type="file" (change)="selectFile($event)">
+          </label>
+    </div>
+    <br><br>
+    <div>
+        <button  class="btn btn-success" [disabled]="!selectedFiles">Submit</button>
+    </div>
+  </form>
+</div>
