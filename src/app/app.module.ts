@@ -5,20 +5,24 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormUploadComponent } from './uploadComponent/form-upload/form-upload.component';
-import { UploadFileService } from './uploadComponent/upload-file.service';
+import { FormDownloadComponent } from './uploadComponent/form-download/form-download.component';
+import { FormDetailsComponent } from './uploadComponent/form-details/form-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormUploadComponent
+    FormUploadComponent,
+    FormDownloadComponent,
+    FormDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [UploadFileService],
+  exports: [],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
