@@ -10,10 +10,15 @@ export class UploadFileService {
   constructor(private http: HttpClient) { }
 
   pushFileToStorage(formdata: FormData): Observable<HttpEvent<{}>> {
-        const req = new HttpRequest('POST', 'http://localhost:8080/post', formdata, {
+    const req = new HttpRequest('POST', 'http://localhost:8080/post', formdata, {
       responseType: 'text'
     });
 
     return this.http.request(req);
-  }
+}
+
+getFiles(): Observable < any > {
+  return this.http.get('http://localhost:8080/getallfiles');
+}
+
 }
