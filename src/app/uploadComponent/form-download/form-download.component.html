@@ -7,7 +7,11 @@
     <div class="panel-heading">List of Files</div>
     <div *ngFor="let file of fileUploads | async">
       <div class="panel-body">
-        <form-details [fileUpload]='file'></form-details>
+        {{file.empId}}&nbsp;&nbsp;&nbsp;&nbsp;
+        {{file.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+        {{file.designation}}&nbsp;&nbsp;&nbsp;&nbsp;
+        {{file.salary}}&nbsp;&nbsp;&nbsp;&nbsp;
+        <form-details [fileUpload]='file.path'></form-details>
       </div>
     </div>
   </div>

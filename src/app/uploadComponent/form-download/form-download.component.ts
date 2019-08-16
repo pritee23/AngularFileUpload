@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadFileService } from '../upload-file.service';
 import { Observable } from 'rxjs';
+import { Employee } from '../form-upload/Employee';
 
 @Component({
   selector: 'form-download',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class FormDownloadComponent implements OnInit {
 
   showFile = false;
-  fileUploads: Observable<string[]>;
+  fileUploads: Observable<Employee[]>;
 
   constructor(private uploadService: UploadFileService) { }
 
@@ -22,6 +23,7 @@ export class FormDownloadComponent implements OnInit {
 
     if (enable) {
       this.fileUploads = this.uploadService.getFiles();
+      console.log(JSON.stringify(this.fileUploads));
     }
   }
 
